@@ -1,0 +1,19 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "cobol: build current file",
+      "type": "shell",
+      "command": "cobc -x -free -o \"${fileDirname}/${fileBasenameNoExtension}\" \"${file}\"",
+      "presentation": { "reveal": "always", "panel": "shared" },
+      "group": { "kind": "build", "isDefault": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "cobol: run last build",
+      "type": "shell",
+      "command": "\"${fileDirname}/${fileBasenameNoExtension}\"",
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ]
+}
